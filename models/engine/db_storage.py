@@ -104,3 +104,9 @@ class DBStorage:
             count = len(models.storage.all(cls).values())
 
         return count
+    
+    @property
+    def session(self):
+        """Returns the current session."""
+        return self.__session
+
