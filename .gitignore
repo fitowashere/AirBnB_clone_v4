@@ -1,1 +1,12 @@
-__pycache__
+.gitignore
+clear.py
+file.json
+main_place_amenities.py
+w3c_validator.py
+*.pyc
+100-hbnb.py
+101-hbnb.py
+100-hbnb.js
+101-hbnb.js
+100-hbnb.html
+101-hbnb.html
