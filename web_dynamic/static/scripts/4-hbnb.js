@@ -10,7 +10,7 @@ $(document).ready(function () {
         } else {
             delete amenityIds[amenityId];
         }
-            console.log(amenityIds);
+        console.log(amenityIds);
         $('.amenities h4').text(Object.values(amenityIds).join(', '));
     });
 
@@ -23,9 +23,8 @@ $(document).ready(function () {
         }
     });
 
-    // Handle search button click
-    $('button').click(function () {
-        console.log("inside click");
+    // Function to load and display places
+    function loadAndDisplayPlaces() {
         $.ajax({
             url: 'http://0.0.0.0:5001/api/v1/places_search/',
             type: 'POST',
@@ -35,7 +34,6 @@ $(document).ready(function () {
                 console.log(data);
                 $('section.places').empty(); // Clear current places
                 for (const place of data) {
-                    // Append each place to the section
                     const article = `<article>
                         <div class="title_box">
                             <h2>${place.name}</h2>
@@ -54,5 +52,14 @@ $(document).ready(function () {
                 }
             }
         });
+    }
+
+    // Load and display places on page load
+    loadAndDisplayPlaces();
+
+    // Handle search button click
+    $('button').click(function () {
+        console.log("Search button clicked");
+        loadAndDisplayPlaces(); // Load and display places based on selected amenities
     });
 });
