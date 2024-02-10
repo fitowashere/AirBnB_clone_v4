@@ -53,15 +53,22 @@ button:hover {
 
 .popover {
     visibility: hidden;
-    width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     background: #FAFAFA;
     padding-bottom: 15px;
-    height: 300px;
-    overflow-y: scroll;
     scrollbar-width: none;
-    max-height: 300px;
+    position: absolute; 
+    z-index: 100;
+    top: 100%;
+    width: auto; /* Allows the width to grow with the content */
+    min-width: 20%; /* Ensures the popover starts off wider than its content */
+    max-width: 100%; /* Prevents it from growing beyond the parent's width */
+    max-height: 300px; /* Maximum height before scrolling, adjust as needed */
+    overflow-x: auto; /* Allows scrolling for very wide content */
+    overflow-y: auto; /* Allows scrolling for very tall content */
+    white-space: nowrap; /* Prevents text wrapping horizontally; adjust based on your content needs */
+    
 }
 
 .popover::-webkit-scrollbar{
