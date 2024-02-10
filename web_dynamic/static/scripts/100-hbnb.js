@@ -67,10 +67,6 @@ $(document).ready(function () {
                             <div class="description">
                                 ${place.description}
                             </div>
-                            <div class="reviews" data-place="${place.id}">
-                                <h2></h2>
-                                <ul></ul>
-                            </div>
                         </article>`
                     );
                 });
